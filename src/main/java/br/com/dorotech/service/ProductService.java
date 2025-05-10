@@ -9,4 +9,5 @@ public interface ProductService {
     ProductDomain getProduct(Long id);
     ProductDomain getProductName(String name);
     List<ProductDomain> getProducts();
+    void delete(Long id);
 }

@@ -51,4 +51,9 @@ public class DoroTechController {
       return this.productService.getProducts().stream()
        .map(xpto -> ProductResponse.builder().build().toProductResponse(xpto)).toList();
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable Long id){
+        this.productService.delete(id);
+    }
 }

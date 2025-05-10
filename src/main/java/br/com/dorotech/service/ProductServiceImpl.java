@@ -41,4 +41,9 @@ public class ProductServiceImpl implements ProductService{
        return this.productRepository.findAll().stream()
        .map(it -> ProductDomain.builder().build().toProductDomain(it)).toList();
     }
+
+    @Override
+    public void delete(Long id) {
+        this.productRepository.deleteById(id);
+    }
 }
