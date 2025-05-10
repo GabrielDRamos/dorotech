@@ -39,4 +39,10 @@ public class DoroTechController {
         return ProductResponse.builder().build()
         .toProductResponse(this.productService.getProduct(id));
     }
+
+    @GetMapping("name/{name}")
+    public ProductResponse getProductByName(@PathVariable String name){
+        return ProductResponse.builder().build()
+        .toProductResponse(this.productService.getProductName(name));
+    }
 }

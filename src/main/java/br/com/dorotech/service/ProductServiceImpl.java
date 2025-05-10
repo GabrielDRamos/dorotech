@@ -25,4 +25,10 @@ public class ProductServiceImpl implements ProductService{
        .build().toProductDomain(this.productRepository.findById(id).get());
         
     }
+
+    @Override
+    public ProductDomain getProductName(String name) {
+        return ProductDomain.builder()
+        .build().toProductDomain(this.productRepository.getByName(name));        
+    }
 }
