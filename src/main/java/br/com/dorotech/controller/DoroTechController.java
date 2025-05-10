@@ -45,4 +45,10 @@ public class DoroTechController {
         return ProductResponse.builder().build()
         .toProductResponse(this.productService.getProductName(name));
     }
+
+    @GetMapping("/list")
+    public List<ProductResponse> getAllProducts(){
+      return this.productService.getProducts().stream()
+       .map(xpto -> ProductResponse.builder().build().toProductResponse(xpto)).toList();
+    }
 }
